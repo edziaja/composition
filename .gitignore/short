@@ -1,0 +1,46 @@
+
+package kompozycja;
+
+public class Kompozycja extends Obraz //definicja klasy kompozycja,
+{
+     public String message="Podany przyklad to:";
+protected String miejsce;//obiekty klasy Kompozycja
+protected String rodzaj;//miejsce i rodzaj naleza do klasy String
+public Kompozycja(String miejsce, String rodzaj,String autor, String tytulObrazu)//rozszerzenie o zmienne wystepujace w klasie Obraz
+{ 
+super (autor,tytulObrazu);//wywolanie konstruktora klasy bazowej Obraz
+this.miejsce=miejsce;
+this.rodzaj=rodzaj;
+message= "Podany jest przykladowy obiekt:  " + miejsce + rodzaj + autor +tytulObrazu ;
+       
+    System.out.println(message); 
+}
+public String okreslMiejsce()
+{ return miejsce;
+}
+public String okreslRodzaj()
+{return rodzaj;
+}
+public static void main(String[] args)
+{
+Obraz malowidlo=new Kompozycja ("rodzaj kompozycji, ", "miejsce kompozycji, ", "autor obrazu, " , "tytul obrazu");// przykladowy obiekt klasy Obraz
+}
+}
+class Obraz 
+{ protected String autor;
+protected String tytulObrazu;
+public Obraz (String autor,String tytulObrazu)
+{this.autor=autor;
+this.tytulObrazu=tytulObrazu;
+}
+public String podajAutor()
+{
+    return autor;
+}
+public String podajTytul()
+{
+    return tytulObrazu;
+}
+}
+
+
